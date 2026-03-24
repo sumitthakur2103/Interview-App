@@ -1,8 +1,10 @@
 import express from "express";
-import { generateInterview } from "../controllers/interview.js";
+import { startInterview, nextStep, endInterview } from "../controllers/interview.js";
 
 const router = express.Router();
 
-router.get("/generate", generateInterview);
+router.get("/start", startInterview);
+router.post("/next", nextStep);
 
+router.get("/end", endInterview);
 export default router;
